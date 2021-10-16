@@ -2,6 +2,7 @@ package com.example.randomproject
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -14,16 +15,20 @@ class MainActivity : AppCompatActivity() {
         val drawButton: Button = findViewById(R.id.draw_button)
         val resultText: TextView = findViewById(R.id.result_text)
         val resultImage:ImageView = findViewById(R.id.image_view)
+        val resultType:TextView = findViewById(R.id.type_text)
         resultText.text = "Your card is"
         fun changeCard(){
             val randomCard1 = ('a'..'b').random()
             val randomCard2 = ('a'..'z').random()
             val nameImage = randomCard1.toString() + randomCard2.toString()
+            Log.e(this.javaClass.simpleName, nameImage)
+            resultType.text = randomCard2.toString()
             val resId:Int = resources.getIdentifier(
                 nameImage, "drawable",
                 packageName
             )
             resultImage.setImageResource(resId)
+
         }
         drawButton.setOnClickListener{
             drawCard()
