@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
                 packageName
             )
             resultImage.setImageResource(resId)
-            numberText.text = randomCard2.toString()
+            numberText.text = randomCard1.toString()
         }
         drawButton.setOnClickListener{
             drawCard()
