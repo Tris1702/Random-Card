@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         val drawButton: Button = findViewById(R.id.draw_button)
         val resultText: TextView = findViewById(R.id.result_text)
         val resultImage:ImageView = findViewById(R.id.image_view)
+        val numberText: TextView = findViewById(R.id.number_txt)
         resultText.text = "Your card is"
         fun changeCard(){
             val randomCard1 = ('a'..'b').random()
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
                 packageName
             )
             resultImage.setImageResource(resId)
+            numberText.text = randomCard2.toString()
         }
         drawButton.setOnClickListener{
             drawCard()
